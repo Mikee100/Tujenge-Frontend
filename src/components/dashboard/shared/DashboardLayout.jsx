@@ -5,16 +5,16 @@ const navLinks = [
   { to: "/dashboard/member/contributions", label: "Contributions" },
   { to: "/dashboard/member/loans", label: "Loans" },
   { to: "/dashboard/member/vaults", label: "Vaults" },
-  { to: "/dashboard/member/investments", label: "Investments" },
-  { to: "/dashboard/member/chat", label: "Group Chat" },
-  { to: "/dashboard/member/meetings", label: "Meetings" },
+  { to: "/dashboard/member/chat", label: "Announcements" },
+  { to: "/dashboard/member/payment", label: "Payment" },
+  
 ];
 
 export default function DashboardLayout() {
   const location = useLocation();
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gray-100 pt-10">
       {/* Sidebar */}
       <aside className="w-64 bg-white shadow-lg flex flex-col">
         <div className="p-6 border-b">

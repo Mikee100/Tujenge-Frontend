@@ -18,9 +18,8 @@ import DashboardLayout from "./components/dashboard/shared/DashboardLayout";
 import ContributionsPage from "./pages/ContributionsPage";
 import LoansPage from "./pages/LoansPage";
 import VaultsPage from "./pages/VaultsPage";
-import InvestmentsPage from "./pages/InvestmentsPage";
 import ChatPage from "./pages/ChatPage";
-import MeetingsPage from "./pages/MeetingsPage";
+import MpesaPayment from "./pages/MpesaPayment";
 import ExecutiveDashboardLayout from "./components/dashboard/shared/ExecutiveDashboardLayout";
 import ExecutiveContributionsPage from "./components/contributions/ExecutiveContributionsPage";
 import ExecutiveMembersPage from "./components/executive/ExecutiveMembersPage";
@@ -34,6 +33,7 @@ function LayoutWrapper({ children }) {
     <div className="flex flex-col min-h-screen">
       {!hideLayout && <Navbar />}
       <main className="flex-grow">{children}</main>
+      {!hideLayout && <Footer/>}
       
     </div>
   );
@@ -59,9 +59,10 @@ function App() {
             <Route path="contributions" element={<ContributionsPage />} />
             <Route path="loans" element={<LoansPage />} />
             <Route path="vaults" element={<VaultsPage />} />
-            <Route path="investments" element={<InvestmentsPage />} />
+            <Route path="payment" element={<MpesaPayment />} />
+            
             <Route path="chat" element={<ChatPage />} />
-            <Route path="meetings" element={<MeetingsPage />} />
+            
           </Route>
           <Route path="/dashboard/executive" element={<ExecutiveDashboardLayout />}>
             <Route index element={<ExecutiveDashboard />} />

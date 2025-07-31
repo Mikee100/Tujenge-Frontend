@@ -102,10 +102,33 @@ export default function Navbar() {
 
         {/* RIGHT SECTION: Login Icon + Hamburger */}
         <div className="flex items-center space-x-4">
-          {/* Login Icon */}
-          <Link to="/login">
-            <FaUserCircle className="text-2xl text-gray-700 hover:text-green-700" />
-          </Link>
+          {/* user icon*/}
+          <div className="relative">
+            <button onClick={() => setDropdownOpen(dropdownOpen === "user" ? null : "user")}>
+              <FaUserCircle className="text-2xl text-gray-700 hover:text-[#475B06]"/>
+            </button>
+                {dropdownOpen === "user" && !localStorage.getItem("access") && (
+                  <div className="absolute right-0 mt-2 w-40 bg-white border rounded shadow-lg z-50">
+                    <Link
+                      to="/login"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(null)}
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      to="/signup"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setDropdownOpen(null)}
+                    >
+                      Signup
+                    </Link>
+                  </div>
+                   )}
+
+
+          </div>
+
 
          {/* Logout Button (show if logged in) */}
          {localStorage.getItem("access") && (
