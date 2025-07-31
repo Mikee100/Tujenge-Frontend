@@ -16,7 +16,7 @@ export default function ExecutiveDashboardLayout() {
   const location = useLocation();
 
   return (
-    <div className="flex min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gray-100 pt-10">
       {/* Sidebar */}
       <aside className="w-64 bg-white shadow-lg flex flex-col">
         <div className="p-6 border-b">

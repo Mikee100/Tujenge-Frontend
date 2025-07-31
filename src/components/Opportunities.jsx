@@ -1,6 +1,8 @@
 import { FaLeaf, FaHome, FaCoins, FaChartPie } from "react-icons/fa";
 import HeroImage from "../assets/images/AboutHeroImage.jpg";
 
+
+
 export default function Opportunities() {
   return (
     <div className="text-gray-800">
@@ -21,7 +23,7 @@ export default function Opportunities() {
       <div className="py-16 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-[#475B06] text-center mb-12">Explore Featured Avenues</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
       
           <div className="bg-white border shadow-sm rounded-lg p-6 text-center hover:shadow-md transition">
             <FaLeaf className="text-4xl text-[#B8D62D] mb-4 mx-auto" />
@@ -57,7 +59,9 @@ export default function Opportunities() {
         <p className="mb-6 text-lg max-w-2xl mx-auto text-gray-900">
           Opportunities are reviewed regularly to ensure security, viability, and impact. Talk with your group and explore together.
         </p>
-        
+          <button className="bg-[#e0b238] text-[#475B06] px-6 py-3 font-semibold rounded hover:bg-[#f7c948] transition">
+          Get Started Now
+        </button>
       </div>
     </div>
   );

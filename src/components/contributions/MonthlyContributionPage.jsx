@@ -22,8 +22,8 @@ export default function MonthlyContributionPage() {
   };
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-6">Monthly Contribution</h1>
+    <div className="mt-20">
+      <h1 className="text-2xl font-bold mb-6 ">Monthly Contribution</h1>
       {/* Progress Card */}
       <div className="bg-white rounded shadow p-6 mb-6 flex flex-col md:flex-row md:items-center md:justify-between">
         <div>

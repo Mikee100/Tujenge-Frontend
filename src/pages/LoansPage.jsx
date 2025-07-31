@@ -192,6 +192,87 @@ const LoansPage = () => {
           </div>
         )}
       </div>
+
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-md w-full max-w-md shadow-lg relative">
+            <h2 className="text-lg font-semibold mb-4 text-gray-800">Loan Request Form</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="block text-sm text-gray-600 mb-1">Loan Amount (Ksh)</label>
+                <input
+                  type="number"
+                  className="w-full border px-3 py-2 rounded text-sm"
+                  value={loanAmount}
+                  onChange={(e) => setLoanAmount(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm text-gray-600 mb-1">Repayment Period</label>
+                <select
+                  value={repaymentPeriod}
+                  onChange={(e) => setRepaymentPeriod(e.target.value)}
+                  className="w-full border px-3 py-2 rounded text-sm"
+                >
+                  <option value="3">3 months</option>
+                  <option value="6">6 months</option>
+                  <option value="12">12 months</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm text-gray-600 mb-1">Purpose</label>
+                <textarea
+                  value={loanPurpose}
+                  onChange={(e) => setLoanPurpose(e.target.value)}
+                  className="w-full border px-3 py-2 rounded text-sm"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm text-gray-600 mb-1">Collateral (Optional)</label>
+                <input
+                  type="text"
+                  className="w-full border px-3 py-2 rounded text-sm"
+                  value={collateral}
+                  onChange={(e) => setCollateral(e.target.value)}
+                />
+              </div>
+
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  checked={contributionConfirmed}
+                  onChange={(e) => setContributionConfirmed(e.target.checked)}
+                  className="mr-2"
+                />
+                <label className="text-sm text-gray-700">
+                  I confirm I have made my monthly contributions
+                </label>
+              </div>
+
+              <div className="flex justify-end space-x-2">
+                <button
+                  type="button"
+                  onClick={() => setShowModal(false)}
+                  className="px-4 py-2 border rounded text-gray-600 hover:bg-gray-100 text-sm"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-[#047056] text-white rounded hover:bg-[#035d47] text-sm"
+                >
+                  Submit Request
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

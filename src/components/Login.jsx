@@ -68,7 +68,7 @@ export default function Login() {
                     <div>
                         <label className="block mb-1 text-gray-700 font-medium">Password:</label>
                         <input
-                        type="text" 
+                        type="password" 
                         value={password}
                         onChange={(e) => setPassword(e.target.value)} className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#475B06]" placeholder="Enter your password" required
                         />
